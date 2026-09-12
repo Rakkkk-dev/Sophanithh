@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Programming Academy</title>
+  <!-- Google Fonts for Khmer & English -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #4b4f53;
+      color: #fafcff;
+      font-family: 'Kantumruy Pro', 'Inter', system-ui, -apple-system, sans-serif;
+      padding: 2rem 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    .academy-card {
+      background-color: #3c3a3a;
+      border: 1px solid #cfd6e0;
+      border-radius: 16px;
+      padding: 1.5rem;
+      max-width: 900px;
+      width: 100%;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* 1. Header Navigation Box */
+    .header-box {
+      background-color: #04beec;
+      border-radius: 12px;
+      padding: 1.75rem 1rem 1.25rem;
+      text-align: center;
+      color: #3f3e3e;
+    }
+
+    .header-box h1 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      background-color: #bb0fea;
+      color: #f1f0f0;
+      padding: 0.5rem 1.1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: background-color 0.2s;
+    }
+
+    .nav-btn:hover {
+      background-color: #d70f87;
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .course-card {
+      background-color: #4b4646;
+      border: 1px solid #006eff;
+      border-radius: 12px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 170px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .course-card h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #e4e4e4;
+      margin-bottom: 0.4rem;
+    }
+
+    .course-card p {
+      font-size: 0.88rem;
+      color: #9fa8b5;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .btn-learn {
+      display: inline-block;
+      align-self: flex-start;
+      background-color: #8849d5;
+      color: #ffffff;
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background-color 0.2s;
+    }
+
+    .btn-learn:hover {
+      background-color: #1d4ed8;
+    }
+
+    /* 3. Announcements Section */
+    .announcement-card {
+      background-color: #b1a8a8;
+      border: 1px solid #1c1d1e;
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+
+    .announcement-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .announcement-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f294a;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .badge-overflow {
+      color: #94a3b8;
+      font-size: 0.8rem;
+      font-family: monospace;
+    }
+
+    .announcement-content {
+      background-color: #969ba5;
+      border: 1px solid #1670ca;
+      border-radius: 8px;
+      padding: 1rem;
+      max-height: 120px;
+      overflow-y: auto;
+    }
+
+    .announcement-content ul {
+      list-style-type: none;
+    }
+
+    .announcement-content li {
+      font-size: 0.88rem;
+      color: #000000;
+      margin-bottom: 0.6rem;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    .announcement-content li:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      .courses-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="academy-card">
+    
+    <header class="header-box">
+      <h1>Web Programming Academy</h1>
+      <nav class="nav-buttons">
+        <a href="#" class="nav-btn">Home</a>
+        <a href="#" class="nav-btn">HTML</a>
+        <a href="#" class="nav-btn">CSS</a>
+        <a href="#" class="nav-btn">Contact</a>
+      </nav>
+    </header>
+
+    <section class="courses-grid">
+
+      <div class="course-card">
+        <div>
+          <h2>HTML5</h2>
+          <p>រៀនពីរចនាសម្ព័ន្ធទំព័របណ្តាញ និង Semantic Elements។</p>
+        </div>
+        <a href="#" class="btn-learn">Learn More</a>
+      </div>
+
+      <div class="course-card">
+        <div>
+          <h2>CSS3</h2>
+          <p>រៀនពីរចនាប័ទ្មពណ៌ Fonts, Box Model និង Display Layouts។</p>
+        </div>
+        <a href="#" class="btn-learn">Learn More</a>
+      </div>
+
+      <div class="course-card">
+        <div>
+          <h2>JavaScript</h2>
+          <p>រៀនបង្កើតអន្តរកម្ម Dynamic ជាមួយ DOM និង Events។</p>
+        </div>
+        <a href="#" class="btn-learn">Learn More</a>
+      </div>
+
+    </section>
+
+    <section class="announcement-card">
+      <div class="announcement-header">
+        <div class="announcement-title">
+          <span>📢</span> Course Announcements
+        </div>
+        <span class="badge-overflow">(overflow-y: auto active)</span>
+      </div>
+      
+      <div class="announcement-content">
+        <ul>
+          <li>• Announcement 1: CSS class begins Monday at 8:00 AM.</li>
+          <li>• Announcement 2: Students must practice the display property exercises.</li>
+          <li>• Announcement 3: Complete the Box Model exercise before next week.</li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
